@@ -6,11 +6,13 @@ function playSound(fileName){
 if (!(result.textContent.substring(0,11) === "اجابة صحيحة")){
     if (result.style){
         result.style.color = "red";
-        playSound("wrong.mp3");
+        if (result.textContent.substring(0,5) === "اجابة"){
+            playSound("wrong.mp3");
+        }
     } 
 } else {
     if (result.style){
         result.style.color = "green";
-        playSound("right.mp3");
+            playSound("right.mp3");
     } 
 }
